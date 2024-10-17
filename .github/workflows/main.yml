@@ -1,0 +1,17 @@
+name: LifePoints Survey Automation
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"  # This will run the job every 10 minutes
+  workflow_dispatch:   # Allows manual run
+
+jobs:
+  check-survey:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Print Message
+      run: echo "Checking for new surveys..."
